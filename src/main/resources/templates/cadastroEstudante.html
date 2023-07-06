@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cssEstudante.css">
+    <link rel="stylesheet" href="../css/cssEstiloLinks.css">
+
+    <title>Cadastro estudante</title>
+</head>
+<body>
+
+  <li><a href="/cadastroProfessor">Cadastro de professor</a></li>
+  <li><a href="/cadastroAula">Cadastro de aula</a></li>
+  <li><a href="/list">Lista de estudante</a></li>
+
+    <form action="/cadastroEstudante" method="POST">
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+          <label for="CPF">CPF</label>
+          <input type="text" id="CPF" name="CPF" required>
+        </div> 
+        <div>
+          <label for="sobrenome">Sobrenome</label>
+          <input type="text" id="sobrenome" name="sobrenome" required>
+        </div>  
+        <div>
+
+          <label>Professores</label>
+          <div class="checkbox-group">
+            <label th:each="profe : ${professores}">
+              <input type="checkbox" name="professores" th:value="${profe.id}">
+              <span th:text="${profe.nome}"></span>
+            </label>
+          </div>
+
+          <label>Aulas</label>
+          <div>
+            <label th:each="aulasE : ${aulas}">
+              <input type="checkbox" name="aulas" th:value="${aulasE.id}">
+              <span th:text="${aulasE.titulo}"></span>
+            </label>
+          </div>
+          <button type="submit" class="button">Cadastrar</button>
+        </div>
+    
+</body>
+</html>

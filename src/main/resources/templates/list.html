@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/cssEstudante.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Lista</title>
+</head>
+<body>
+    <table>
+   
+    <thead>
+       
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome do estudante</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Sobrenome</th>
+        </tr>
+    
+      </thead>
+      <tbody>
+          <tr data-th-each="estudante: ${estudantes}" data>
+              <td data-th-text="${estudante.id}"></td>
+              <td data-th-text="${estudante.nome}"></td>
+              <td data-th-text="${estudante.CPF}"></td>
+              <td data-th-text="${estudante.sobrenome}"></td>
+             
+          </tr>              
+      </tbody>        
+    </table>      
+    <a href="/cadastroEstudante">Voltar tela cadastro</a> 
+    
+</body>
+</html>
